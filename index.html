@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#07080b"><link rel="manifest" href="manifest.webmanifest"><link rel="stylesheet" href="style.css">
+<link rel="icon" href="icon.svg" type="image/svg+xml"><link rel="apple-touch-icon" href="icon.svg">
+<meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<title>Pulse</title>
+</head>
+<body>
+<div class="app">
+<header class="top"><div><div class="tiny">PULSE / WEARABLE</div><h1>Good evening.</h1></div><div id="bleDot" class="dot off"></div></header>
+
+<section class="hero">
+<div class="ring" id="ring"><div class="ring-inner"><div id="bpm">--</div><span>BPM</span></div></div>
+<div class="live"><i></i><span id="state">NOT CONNECTED</span></div>
+</section>
+
+<section class="metrics">
+<div class="metric"><span>HRV</span><b id="rmssd">--</b><em>ms RMSSD</em></div>
+<div class="metric"><span>RR INTERVAL</span><b id="rr">--</b><em>ms</em></div>
+<div class="metric"><span>SIGNAL</span><b id="signal">--</b><em>quality</em></div>
+</section>
+
+<section class="panel">
+<div class="panel-head"><div><span class="tiny">HEART RATE</span><h2>Live</h2></div><span id="range">—</span></div>
+<canvas id="chart"></canvas>
+</section>
+
+<section class="panel session">
+<div class="panel-head"><div><span class="tiny">SESSION</span><h2>Today</h2></div><button id="clear">Clear</button></div>
+<div class="rows">
+<div><span>Readings</span><b id="count">0</b></div>
+<div><span>Average BPM</span><b id="avg">--</b></div>
+<div><span>Last reading</span><b id="last">--</b></div>
+</div>
+</section>
+
+<div class="actions">
+<button id="connect" class="primary">Connect wearable</button>
+<button id="disconnect" class="secondary" disabled>Disconnect</button>
+</div>
+<p id="msg"></p>
+<footer>BLE • Heart Rate Service • Local data only</footer>
+</div>
+<script src="app.js"></script>
+</body></html>

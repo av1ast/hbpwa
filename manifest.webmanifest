@@ -1,0 +1,20 @@
+{
+  "name": "Pulse — Heart Rate & HRV",
+  "short_name": "Pulse",
+  "description": "Live heart rate and HRV from a BLE sensor. All data stays on your device.",
+  "start_url": ".",
+  "scope": ".",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#07080b",
+  "theme_color": "#07080b",
+  "categories": ["health", "fitness"],
+  "icons": [
+    {
+      "src": "icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}
