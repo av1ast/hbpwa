@@ -9,7 +9,21 @@
 </head>
 <body>
 <div class="app">
-<header class="top"><div><div class="tiny">PULSE / WEARABLE</div><h1>Good evening.</h1></div><div id="bleDot" class="dot off"></div></header>
+<header class="top"><div><div class="tiny">PULSE / WEARABLE</div><h1>Good evening.</h1></div>
+<div class="hgroup"><span id="batt" class="batt">—</span><div id="bleDot" class="dot off"></div></div></header>
+
+<section class="panel today">
+<div class="panel-head"><div><span class="tiny">TODAY</span><h2>Recovery</h2></div><span id="recZone" class="zone">—</span></div>
+<div class="recwrap">
+<div class="recring" id="recRing"><div class="recinner"><b id="recPct">--</b><span>%</span></div></div>
+<div class="recstats">
+<div><span>HRV today</span><b id="recHrv">--</b><em>ms</em></div>
+<div><span>Resting HR</span><b id="recRhr">--</b><em>bpm</em></div>
+<div><span>Est. sleep</span><b id="recSleep">--</b><em id="recSleepQ"></em></div>
+</div>
+</div>
+<p class="note" id="recNote">Збираю базову лінію…</p>
+</section>
 
 <section class="hero">
 <div class="ring" id="ring"><div class="ring-inner"><div id="bpm">--</div><span>BPM</span></div></div>
@@ -27,21 +41,25 @@
 <canvas id="chart"></canvas>
 </section>
 
-<section class="panel session">
-<div class="panel-head"><div><span class="tiny">SESSION</span><h2>Today</h2></div><button id="clear">Clear</button></div>
+<section class="panel history">
+<div class="panel-head"><div><span class="tiny">HISTORY</span><h2 id="histTitle">Log</h2></div>
+<div class="seg"><button id="segBpm" class="on">BPM</button><button id="segHrv">HRV</button></div></div>
+<canvas id="histChart"></canvas>
 <div class="rows">
 <div><span>Readings</span><b id="count">0</b></div>
 <div><span>Average BPM</span><b id="avg">--</b></div>
 <div><span>Last reading</span><b id="last">--</b></div>
 </div>
+<div class="histlist" id="histList"></div>
+<button id="clear" class="linkbtn">Clear history</button>
 </section>
 
 <div class="actions">
-<button id="connect" class="primary">Connect wearable</button>
+<button id="connect" class="primary">Connect &amp; sync</button>
 <button id="disconnect" class="secondary" disabled>Disconnect</button>
 </div>
 <p id="msg"></p>
-<footer>BLE • Heart Rate Service • Local data only</footer>
+<footer>BLE • logs on device • syncs on connect • local data only</footer>
 </div>
 <script src="app.js"></script>
 </body></html>
